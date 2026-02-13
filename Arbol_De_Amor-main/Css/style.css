@@ -70,30 +70,33 @@ body {
 }
 
 .dedication-text {
-position: relative;   /* antes absolute */
+  position: relative;
   margin: 5% 0 5% 3%;
-  top: auto;
-  left: auto;
-  transform: none;
-  min-width: 320px;
+
+  width: 90%;
   max-width: 600px;
-  width: 60rem;
+
   font-size: 1.5rem;
   color: #ffffff;
   font-family: 'Courier New', Courier, monospace;
   white-space: pre-line;
+
   z-index: 3;
   opacity: 0;
   pointer-events: none;
-  max-height: 90vh;
-  overflow: visible;
-  padding: 1em 1.5em 1em 1em;
+
+  padding: 1.5em;
   background: rgba(99, 167, 223, 0.92);
   border-radius: 0.7em;
   box-shadow: 0 2px 16px #6bbdd3fa;
-  /* Permite que la caja crezca en altura y ancho */
-  transition: max-width 0.4s, min-width 0.4s, width 0.4s;
+
+  max-height: 75vh;   /* 👈 altura máxima del cuadro */
+  overflow-y: auto;   /* 👈 scroll interno */
+  overflow-x: hidden;
+
+  scrollbar-width: thin; /* Firefox */
 }
+
 
 .dedication-text.typing {
   opacity: 1;
@@ -195,4 +198,23 @@ position: relative;   /* antes absolute */
   .signature {
     font-size: 1.3rem;
   }
+.dedication-text::-webkit-scrollbar {
+  width: 8px;
 }
+
+.dedication-text::-webkit-scrollbar-track {
+  background: rgba(255,255,255,0.2);
+  border-radius: 10px;
+}
+
+.dedication-text::-webkit-scrollbar-thumb {
+  background: #ffffff88;
+  border-radius: 10px;
+}
+
+.dedication-text::-webkit-scrollbar-thumb:hover {
+  background: #ffffffcc;
+}
+
+}
+
